@@ -1,8 +1,9 @@
 # Kartverktøy
 
-Lag egne kart og trykkeklare kartplakater fra OpenStreetMap-data. Utseendet er
-inspirert av [kart.svipper.no](https://kart.svipper.no), plakatfunksjonene av
-[mapposter.xyz](https://mapposter.xyz).
+Lag egne kart og trykkeklare kartplakater fra OpenStreetMap-data. 
+
+<img width="795" height="835" alt="image" src="https://github.com/user-attachments/assets/41aee66e-324e-442c-8153-f74d5f322499" />
+
 
 To moduser i samme app:
 
