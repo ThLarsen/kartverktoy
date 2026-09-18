@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kartverktøy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700&family=Oswald:wght@300;400;600&family=Playfair+Display:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css" rel="stylesheet">
+<link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 6.5 8.5 4l7 2.5L22 4v13.5L15.5 20l-7-2.5L2 20z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 4v13.5M15.5 6.5V20" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span>Kartverktøy</span>
+    </div>
+    <nav class="modes">
+      <button class="mode-btn is-active" data-mode="poster">Plakat</button>
+      <button class="mode-btn" data-mode="map">Kart</button>
+    </nav>
+    <div class="topbar-right">
+      <button id="keyBtn" class="ghost-btn" title="MapTiler-nøkkel">Nøkkel</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="panel" id="panel"></aside>
+    <section class="stage" id="stage">
+      <div class="stage-inner">
+        <div class="poster" id="poster">
+          <div class="poster-map" id="mapFrame">
+            <div id="map"></div>
+          </div>
+          <div class="poster-text" id="posterText"></div>
+        </div>
+      </div>
+      <div class="stage-hint" id="stageHint">Hold <kbd>Shift</kbd> for å zoome med hjulet</div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="keyModal" hidden>
+    <div class="modal">
+      <h2>MapTiler API-nøkkel</h2>
+      <p>Lag en gratis nøkkel på <a href="https://cloud.maptiler.com/account/keys/" target="_blank" rel="noreferrer noopener">cloud.maptiler.com</a>. Nøkkelen lagres kun i nettleseren din (localStorage) og sendes bare til MapTiler.</p>
+      <input type="text" id="keyInput" placeholder="f.eks. AbCdEf123..." spellcheck="false" autocomplete="off">
+      <div class="modal-actions">
+        <button class="ghost-btn" id="keyCancel">Avbryt</button>
+        <button class="primary-btn" id="keySave">Lagre</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js" crossorigin="anonymous"></script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

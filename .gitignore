@@ -1,0 +1,22 @@
+# Operativsystem
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editorer
+.vscode/
+.idea/
+*.swp
+
+# Python (serve.py)
+__pycache__/
+*.pyc
+
+# Hemmeligheter. MapTiler-nøkkelen bor i nettleserens localStorage og skal
+# aldri inn i en fil her — men havner den i en likevel, skal den ikke committes.
+.env
+.env.*
+config.local.js
+
+# Lokale Claude Code-innstillinger
+.claude/settings.local.json

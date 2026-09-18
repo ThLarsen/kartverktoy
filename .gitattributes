@@ -1,0 +1,10 @@
+# Normaliser linjeskift til LF i repoet, uansett hva editoren på Windows lagrer.
+* text=auto
+
+# Binærfiler skal aldri linjeskift-konverteres
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
