@@ -33,6 +33,7 @@ function w(stops, scale = 1) {
  * @param {boolean} [opts.water]
  * @param {boolean} [opts.roads]
  * @param {boolean} [opts.rail]
+ * @param {boolean} [opts.tunnels]     stiplede veier i tunnel
  * @param {boolean} [opts.boundaries]
  * @param {number}  [opts.lineScale]   1 = normal, <1 tynnere, >1 tykkere
  * @returns {Object} MapLibre style spec
@@ -46,6 +47,7 @@ export function buildStyle(p, opts = {}) {
     landuse = true,
     water = true,
     roads = true,
+    tunnels = true,
     rail = true,
     boundaries = false,
     lineScale = 1,
@@ -193,6 +195,36 @@ export function buildStyle(p, opts = {}) {
         width: [[4, 0.5], [8, 1.2], [11, 2.4], [14, 5], [16, 9], [20, 36]],
       },
     ];
+
+    // Tunneler tegnes først, altså under veiene på bakken, stiplet, tynnere og
+    // halvgjennomsiktige. Da henger veinettet sammen uten at det ser ut som om
+    // veien går oppå husene. Filtrert helt bort ga det hull i hovedveien overalt
+    // i en by som Tromsø.
+    if (tunnels) {
+      for (const r of roadDefs) {
+        if (!r.casing) continue; // stier i tunnel er støy
+        layers.push({
+          id: `tunnel-${r.id}`,
+          type: 'line',
+          source: src,
+          'source-layer': 'transportation',
+          minzoom: r.minzoom,
+          filter: [
+            'all',
+            ['==', ['geometry-type'], 'LineString'],
+            ['in', ['get', 'class'], ['literal', r.classes]],
+            ['==', ['get', 'brunnel'], 'tunnel'],
+          ],
+          layout: { 'line-join': 'round' },
+          paint: {
+            'line-color': r.color,
+            'line-width': w(r.width.map(([z, px]) => [z, px * 0.75]), s),
+            'line-opacity': 0.55,
+            'line-dasharray': [2, 1.5],
+          },
+        });
+      }
+    }
 
     for (const r of roadDefs) {
       const base = {
