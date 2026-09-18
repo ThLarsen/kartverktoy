@@ -294,28 +294,31 @@ export const THEMES = [
     ink: '#C87137',
     paper: '#1C1714',
   },
-    {
+  {
+    // Samme oppbygning som Kobber, i blått: nesten svart base, vann mørkere
+    // enn land, land og bygg bare små steg lysere, og veiene som eneste
+    // mettede farge. Plakatteksten bruker samme aksent som hovedveiene.
     id: 'blueworld',
     name: 'Blue World',
-    background: '#36517a',
-    water: '#92a7b9',
-    waterway: '#94AEB6',
-    green: '#5b85aa',
-    landuse: '#36517a',
-    building: '#5b85aa',
-    buildingLine: '#B5A18C',
-    roadMajor: '#5b85aa',
-    roadMajorLine: '#5b85aa',
-    roadMinor: '#5b85aa',
-    roadMinorLine: '#5b85aa',
-    path: '#36517a',
-    rail: '#A08D78',
-    boundary: '#9B8873',
-    text: '#5C4B39',
-    textHalo: '#36517a',
-    ink: '#4A3B2B',
-    paper: '#36517a',
-  }
+    background: '#141C28',
+    water: '#0A0F17',
+    waterway: '#101826',
+    green: '#172131',
+    landuse: '#18222F',
+    building: '#1F2B3C',
+    buildingLine: '#2A3A50',
+    roadMajor: '#5C90C7',
+    roadMajorLine: '#141C28',
+    roadMinor: '#3F6690',
+    roadMinorLine: '#141C28',
+    path: '#2E4A6A',
+    rail: '#36517A',
+    boundary: '#2E4560',
+    text: '#B9CCE0',
+    textHalo: '#141C28',
+    ink: '#8DB8E3',
+    paper: '#141C28',
+  },
 ];
 
 export const THEMES_BY_ID = Object.fromEntries(THEMES.map((t) => [t.id, t]));
