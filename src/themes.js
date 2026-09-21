@@ -315,13 +315,14 @@ export const THEMES = [
     paper: '#EFE3D0',
   },
   {
-    // Svart hav, hvitt land, svarte veier. Den gamle versjonen hadde lysegrått
-    // vann på hvitt, så kystlinja — det som gir et kart form — nesten forsvant.
+    // Grått hav, hvitt land, svarte veier. Lysegrått vann på hvitt lot kystlinja
+    // — det som gir et kart form — nesten forsvinne; helt svart ble for tungt.
+    // #5C5C5C er midt mellom: kystlinja bærer bildet, veiene synes over vann.
     id: 'minimal',
     name: 'Minimal',
     background: '#FFFFFF',
-    water: '#1C1C1C',
-    waterway: '#1C1C1C',
+    water: '#5C5C5C',
+    waterway: '#5C5C5C',
     green: '#F3F3F3',
     landuse: '#FAFAFA',
     building: '#EDEDED',
