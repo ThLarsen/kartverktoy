@@ -520,7 +520,13 @@ function markerSection() {
       text: placing ? 'Ferdig — klikk i kartet for flere' : 'Plassér markør',
     }),
     U.field(
-      'Farge på neste markør',
+      `Passer til ${getTheme(state.themeId).name}`,
+      U.colorPicker(getTheme(state.themeId).markers || [], state.markerColor, (v) => set({ markerColor: v }), {
+        custom: false,
+      })
+    ),
+    U.field(
+      'Flere farger',
       U.colorPicker(MARKER_COLORS, state.markerColor, (v) => set({ markerColor: v }))
     ),
     U.field('Form', U.segmented(MARKER_STYLES, state.markerShape, (v) => set({ markerShape: v }))),

@@ -13,18 +13,23 @@ export const LABEL_LAYER_ID = 'markers-label';
 /** Punktstørrelse på markørnavnene. Etikettavstanden regnes ut fra denne. */
 const LABEL_SIZE = 13;
 
-/** Ferdige farger som står seg mot både lyse og mørke paletter. */
+/**
+ * Felles, dempet palett. Den gamle var iOS-systemfarger og skrek mot de rolige
+ * kartene. Ingen enkeltfarge passer på både lyse og mørke kart, så rekka spenner
+ * fra kritt til kull — de lyse er til mørke temaer og omvendt. Farger som er
+ * valgt for hvert enkelt tema ligger i `markers` i themes.js.
+ */
 export const MARKER_COLORS = [
-  '#FF3B30',
-  '#FF9500',
-  '#FFCC00',
-  '#34C759',
-  '#00C7BE',
-  '#0A84FF',
-  '#5E5CE6',
-  '#FF2D95',
-  '#FFFFFF',
-  '#111111',
+  '#C8553D', // rust
+  '#D9A441', // oker
+  '#E6D3A3', // sand
+  '#7A9E5A', // mose
+  '#4F9D9A', // havgrønn
+  '#5B7DB1', // dueblå
+  '#9A7AA0', // lyng
+  '#D4A5A5', // rosé
+  '#F2EFE9', // kritt
+  '#2B2B2B', // kull
 ];
 
 export const MARKER_STYLES = [

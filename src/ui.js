@@ -109,14 +109,17 @@ export function textInput(value, placeholder, onChange) {
  * Faste farger pluss en fri fargevelger. Den frie står til slutt og viser
  * gjeldende verdi, slik at et valg utenfor rekka ikke ser ubesvart ut.
  */
-export function colorPicker(colors, value, onChange) {
-  const custom = el('input', {
-    type: 'color',
-    class: 'color-custom',
-    value,
-    title: 'Egen farge',
-    oninput: (e) => onChange(e.target.value),
-  });
+export function colorPicker(colors, value, onChange, opts = {}) {
+  const { custom: withCustom = true } = opts;
+  const custom =
+    withCustom &&
+    el('input', {
+      type: 'color',
+      class: 'color-custom',
+      value,
+      title: 'Egen farge',
+      oninput: (e) => onChange(e.target.value),
+    });
   return el('div', { class: 'color-row' }, [
     ...colors.map((c) =>
       el('button', {

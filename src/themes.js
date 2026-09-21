@@ -36,6 +36,9 @@
  * @property {string} textHalo
  * @property {string} ink             plakattekst under kartet
  * @property {string} paper           plakatbakgrunn
+ * @property {string[]} markers       tre markørfarger som passer temaet: aksenten,
+ *                                    en lys/nøytral og en rolig kontrast. Alle har
+ *                                    minst 3:1 mot arealbruk, så de synes på kartet.
  */
 
 /** @type {Palette[]} Mørke temaer først, så lyse. */
@@ -62,6 +65,7 @@ export const THEMES = [
     textHalo: '#1C1714',
     ink: '#C87137',
     paper: '#1C1714',
+    markers: ['#E8A15A', '#F1E3D3', '#5FA8A0'],
   },
   {
     // Kobber i blått.
@@ -85,6 +89,7 @@ export const THEMES = [
     textHalo: '#141C28',
     ink: '#8DB8E3',
     paper: '#141C28',
+    markers: ['#A9CFF2', '#F2F5F8', '#E0A458'],
   },
   {
     id: 'nordlys',
@@ -107,6 +112,7 @@ export const THEMES = [
     textHalo: '#1F1F24',
     ink: '#EDEDF2',
     paper: '#2E2E33',
+    markers: ['#8FD6B0', '#C9A7EB', '#EDEDF2'],
   },
   {
     id: 'blaakopi',
@@ -129,6 +135,7 @@ export const THEMES = [
     textHalo: '#0D3B66',
     ink: '#E6F1FF',
     paper: '#0D3B66',
+    markers: ['#FFFFFF', '#FFD166', '#F4A261'],
   },
   {
     id: 'blekk',
@@ -151,6 +158,7 @@ export const THEMES = [
     textHalo: '#0F1116',
     ink: '#EFEBE1',
     paper: '#0F1116',
+    markers: ['#EFEBE1', '#C9A96E', '#C25B5D'],
   },
   {
     id: 'midnatt',
@@ -173,6 +181,7 @@ export const THEMES = [
     textHalo: '#10131A',
     ink: '#F2C14E',
     paper: '#10131A',
+    markers: ['#F2C14E', '#F5E6C4', '#7FA7D9'],
   },
   {
     id: 'skog',
@@ -195,6 +204,7 @@ export const THEMES = [
     textHalo: '#132C1F',
     ink: '#E4F0DA',
     paper: '#132C1F',
+    markers: ['#E4F0DA', '#D9A441', '#D0795A'],
   },
   {
     id: 'neon',
@@ -217,6 +227,7 @@ export const THEMES = [
     textHalo: '#0A0612',
     ink: '#FF2E97',
     paper: '#0A0612',
+    markers: ['#FF2E97', '#22D3EE', '#FFE066'],
   },
 
   // ------------------------------------------------------------- lyse
@@ -244,6 +255,7 @@ export const THEMES = [
     textHalo: '#F4EBE3',
     ink: '#A5471F',
     paper: '#F4EBE3',
+    markers: ['#A5471F', '#3B2A20', '#5E7361'],
   },
   {
     // Blue World på lyst papir: isblå base, tydelig fjordvann, dype blå veier.
@@ -267,6 +279,7 @@ export const THEMES = [
     textHalo: '#EEF2F5',
     ink: '#23405E',
     paper: '#EEF2F5',
+    markers: ['#23405E', '#B5543C', '#5E8C61'],
   },
   {
     // Det klassiske lyse kartet: hvite veier med grå kant. Leire lå for tett
@@ -291,6 +304,7 @@ export const THEMES = [
     textHalo: '#F4F1EA',
     ink: '#2C2A25',
     paper: '#F4F1EA',
+    markers: ['#2C2A25', '#B5543C', '#3F6C9E'],
   },
   {
     id: 'sepia',
@@ -313,6 +327,7 @@ export const THEMES = [
     textHalo: '#EFE3D0',
     ink: '#4A3C28',
     paper: '#EFE3D0',
+    markers: ['#4A3C28', '#8C3B2A', '#4F6D5E'],
   },
   {
     // Grått hav, hvitt land, svarte veier. Lysegrått vann på hvitt lot kystlinja
@@ -338,6 +353,7 @@ export const THEMES = [
     textHalo: '#FFFFFF',
     ink: '#111111',
     paper: '#FFFFFF',
+    markers: ['#111111', '#D7263D', '#1F4E79'],
   },
 ];
 
