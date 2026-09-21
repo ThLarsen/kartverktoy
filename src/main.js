@@ -107,6 +107,10 @@ function loadState() {
     delete saved.labels;
   }
 
+  // Fjernede temaer (Leire, Korall) skrives om til sin erstatning, så riktig
+  // rute er markert i temavelgeren og ikke bare riktig farge på kartet.
+  if (saved.themeId) saved.themeId = getTheme(saved.themeId).id;
+
   return { ...DEFAULTS, ...saved };
 }
 
